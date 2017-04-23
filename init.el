@@ -52,6 +52,8 @@
 (setq-default cursor-type 'bar)
 ;; 设置不备份文件
 (setq make-backup-files nil)
+;; 设置不自动保存文件
+(setq auto-save-default nil)
 ;; 在org文件中代码高亮
 (require 'org)
 (setq org-src-fontify-natively t)
@@ -104,10 +106,13 @@
 (global-set-key (kbd "C-h C-v") 'find-variable)
 ;; find-function-on-key
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
+
 ;; ~/org 目录下 org-agenda
 (setq org-agenda-files '("~/org"))
 (global-set-key (kbd "C-c a") 'org-agenda)
 
+;; 修改 ~/.emacs.d/init.el 时自动加载
+(global-auto-revert-mode t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

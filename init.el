@@ -16,6 +16,7 @@
 		     js2-mode
 		     nodejs-repl
 		     exec-path-from-shell
+		     popwin
 		     ) "Default packages")
 (setq package-selected-packages s/packages)
 (defun s/packages-installed-p ()
@@ -113,6 +114,10 @@
 
 ;; 修改 ~/.emacs.d/init.el 时自动加载
 (global-auto-revert-mode t)
+
+;; 使用popwin
+(require 'popwin)
+(popwin-mode t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -32,7 +32,6 @@
       (package-install pkg))))
 
 ;; 使用hungry-delete
-(require 'hungry-delete)
 (global-hungry-delete-mode)
 
 ;; 使用exec-path-from-shell
@@ -40,7 +39,6 @@
   (exec-path-from-shell-initialize))
 
 ;; 使用smartparens
-(require 'smartparens-config)
 ;; (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
 (ivy-mode 1)

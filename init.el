@@ -1,35 +1,12 @@
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-  )
-
-(require 'cl)
-
-(defvar s/packages '(
-		     company
-		     monokai-theme
-		     hungry-delete
-		     swiper
-		     counsel
-		     smartparens
-		     js2-mode
-		     nodejs-repl
-		     exec-path-from-shell
-		     popwin
-		     ) "Default packages")
-(setq package-selected-packages s/packages)
-(defun s/packages-installed-p ()
-  (loop for pkg in s/packages
-	when (not (package-installed-p pkg)) do (return nil)
-	finally (return t)))
-
-(unless (s/packages-installed-p)
-  (message "%s" "Refreshing package database ...")
-  (package-refresh-contents)
-  (dolist (pkg s/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'init-packages)
+;; 关闭提示音
+(setq ring-bell-function 'ignore)
 
 ;; 关闭工具栏
 (tool-bar-mode -1)
@@ -47,8 +24,7 @@
   (find-file "~/.emacs.d/init.el"))
 ;; 点击<f6>执行open-my-init-file
 (global-set-key (kbd "<f5>") 'open-my-init-file)
-;; 启用global-company-mode
-(global-company-mode t)
+
 ;; 设置光标类型为线型
 (setq-default cursor-type 'bar)
 ;; 设置不备份文件
@@ -71,14 +47,7 @@
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 ;; 高亮当前行
 (global-hl-line-mode t)
-;; 加载主题
-(load-theme 'monokai t)
-;; 使用hungry-delete
-(require 'hungry-delete)
-(global-hungry-delete-mode)
 ;; 使用swiper
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
 (global-set-key "\C-s" 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
@@ -86,20 +55,6 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-h f") 'counsel-describe-function)
 (global-set-key (kbd "C-h v") 'counsel-describe-variable)
-;; 使用smartparens
-(require 'smartparens-config)
-;; (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
-(smartparens-global-mode t)
-;; 使用js2-mode
-(setq auto-mode-alist
-      (append
-       '(("\\.js\\'" . js2-mode))
-       auto-mode-alist))
-;; 使用nodejs-repl
-(require 'nodejs-repl)
-;; 使用exec-path-from-shell
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
 
 ;; find-function
 (global-set-key (kbd "C-h C-f") 'find-function)
@@ -115,9 +70,12 @@
 ;; 修改 ~/.emacs.d/init.el 时自动加载
 (global-auto-revert-mode t)
 
-;; 使用popwin
-(require 'popwin)
-(popwin-mode t)
+;; 自定义缩写
+(abbrev-mode t)
+(define-abbrev-table 'global-abbrev-table '(
+					    ("mst" "Microsoft")
+					    ))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

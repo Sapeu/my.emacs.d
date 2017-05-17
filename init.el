@@ -3,7 +3,7 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
-(add-to-list 'load-path "~/.emacs.d/lisp")
+(add-to-list 'load-path "~/.emacs.d/els")
 ;; 定义open-my-init-file打开~/.emacs.d/init.el文件
 (defun open-my-init-file()
   (interactive)

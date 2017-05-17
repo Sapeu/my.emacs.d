@@ -16,4 +16,9 @@
 ;; 启动emacs为全屏状态
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 
+;;;###autoload
+(defun test-autoload()
+  (interactive)
+  (message "Test autoload"))
+
 (provide 'init-ui)

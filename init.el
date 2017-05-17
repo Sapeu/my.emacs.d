@@ -8,7 +8,10 @@
 (defun open-my-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
+;; require 依赖 load 依赖 load-file
 (require 'init-packages)
+;; (load "init-packages")
+;; (load-file "~/.emacs.d/lisp/init-packages.elc")
 (require 'init-ui)
 (require 'init-better-defaults)
 (require 'init-keybindings)

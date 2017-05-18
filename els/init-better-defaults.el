@@ -34,5 +34,21 @@
 ;; 自动缩进
 ;; (electric-indent-mode t)
 
+;; 选中的内容
+(defun indent-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+;; 判断是选中内容格式化合适整个内容格式化
+(defun indent-region-or-buffer ()
+  (interactive)
+  (save-excursion
+    (if (region-active-p)
+	(progn
+	  (indent-region (region-beginning) (region-end))
+	  (message "Indented selected region."))
+      (progn
+	(indent-buffer)
+	(message "Indented buffer.")))))
 
 (provide 'init-better-defaults)

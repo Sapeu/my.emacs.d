@@ -26,4 +26,7 @@
 ;; 定义counsel-git的快捷键
 (global-set-key (kbd "C-c p f") 'counsel-git)
 
+;; 定义选中内容格式化或者整个内容格式化快捷键
+(global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
+
 (provide 'init-keybindings)

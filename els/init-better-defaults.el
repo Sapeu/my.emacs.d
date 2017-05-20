@@ -51,4 +51,34 @@
 	(indent-buffer)
 	(message "Indented buffer.")))))
 
+;; 补全(暂时不管用 mac 上可能管用 commd+斜杠)
+(setq hippie-expand-try-functions-list '(try-expand-dabbrev
+					 try-expand-dabbrev-all-buffers
+					 try-expand-dabbrev-from-kill
+					 try-expand-all-abbrevs
+					 try-expand-list
+					 try-expand-line
+					 try-complete-file-name-partially
+					 try-complete-file-name
+					 try-complete-lisp-symbol-partially
+					 try-complete-lisp-symbol))
+
+;; 询问 yes or no 时,更换为简写的 y or n
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; 在 dired 中删除或拷贝询问是否递归时,不提示,默认选递归操作
+(setq dired-recursive-copies 'always)
+(setq dired-recursive-deletes 'always)
+
+;; 每次在 dired 下打开目录时不生成新的 buffer
+(put 'dired-find-alternate-file 'disabled nil)
+;; with-eval-after-load 在 dired 时执行程序,避免 require 加载慢
+(with-eval-after-load 'dired
+  ;; require 加载慢
+  ;; (require 'dired)
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
+  )
+(require 'dired-x)
+(setq dired-dwim-target t)
+
 (provide 'init-better-defaults)

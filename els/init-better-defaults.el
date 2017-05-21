@@ -81,4 +81,23 @@
 (require 'dired-x)
 (setq dired-dwim-target t)
 
+;; 显示匹配的括号
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+  (cond ((looking-at-p "\\s(") (funcall fn))
+	(t (save-excursion
+	     (ignore-errors (backward-up-list))
+	     (funcall fn)))))
+
+;; 隐藏DOS换行符(^M)
+(defun hidden-dos-eol ()
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+;; 删除DOS换行符(^M)
+(defun remove-dos-eol ()
+  (interactive)
+  (goto-char) (point-min)
+  (while (search-forward "\r" nil t) (replace-match "")))
+
 (provide 'init-better-defaults)

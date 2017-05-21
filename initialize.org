@@ -30,7 +30,6 @@
 (load-file custom-file)
 #+END_SRC
 
-
 ** dired 使用方法
 按 C+x d 进入当前文件的目录
 回车 进入 dired buffer

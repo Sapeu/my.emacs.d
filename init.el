@@ -8,4 +8,3 @@
 (require 'org-install)
 (require 'ob-tangle)
 (org-babel-load-file (expand-file-name "initialize.org" user-emacs-directory))
-

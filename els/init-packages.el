@@ -60,4 +60,8 @@
 (require 'popwin)
 (popwin-mode t)
 
+;; 在 emacs-lisp-mode 下按单引号不补全引号
+(smartparens-global-mode t)
+(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+
 (provide 'init-packages)

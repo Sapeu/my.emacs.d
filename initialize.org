@@ -3,6 +3,9 @@
 ** 初始化 packages
 #+BEGIN_SRC emacs-lisp
 ;; (package-initialize)
+;; (require 'org-install)
+;; (require 'ob-tangle)
+;; (org-babel-load-file (expand-file-name "initialize.org" user-emacs-directory)
 #+END_SRC
 
 ** 配置 load path 和 load file

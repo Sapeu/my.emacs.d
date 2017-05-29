@@ -1,12 +1,8 @@
 (when (>= emacs-major-version 24)
-  (require 'package)
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-  )
-
-;; (setq package-archives
-;; '(("gnu" . "http://elpa.gnu.org/packages/")
-;; ("melpa" . "https://melpa.org/packages/")
-;; ))
+    (require 'package)
+      (add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+        )
 
 (require 'cl)
 
@@ -23,6 +19,8 @@
 		     popwin
 		     web-mode
 		     js2-refactor
+		     expand-region
+		     iedit
 		     ) "Default packages")
 
 (setq package-selected-packages s/packages)
@@ -102,5 +100,33 @@
 ;; 初始化js2-refactor
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (js2r-add-keybindings-with-prefix "C-c C-m")
+
+;; 配置 imenu 快捷键
+(defun js2-imenu-make-index ()
+  (interactive)
+  (save-excursion
+    ;; (setq imenu-generic-expression '((nil "describe\\(\"\\(.+\\)\"" 1)))
+    (imenu--generic-function '(("describe" "\\s-*describe\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
+			       ("it" "\\s-*it\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
+			       ("test" "\\s-*test\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
+			       ("before" "\\s-*before\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
+			       ("after" "\\s-*after\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
+			       ("Function" "function[ \t]+\\([a-zA-Z0-9_$.]+\\)[ \t]*(" 1)
+			       ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*=[ \t]*function[ \t]*(" 1)
+			       ("Function" "^var[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*=[ \t]*function[ \t]*(" 1)
+			       ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*()[ \t]*{" 1)
+			       ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*:[ \t]*function[ \t]*(" 1)
+			       ("Task" "[. \t]task([ \t]*['\"]\\([^'\"]+\\)" 1)))))
+(add-hook 'js2-mode-hook
+	  (lambda ()
+	    (setq imenu-create-index-function 'js2-imenu-make-index)))
+(global-set-key (kbd "M-s i") 'counsel-imenu)
+
+;; 自动选取范围中的字符
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+;; 设置 iedit-mode 快捷键,默认快捷键是C-;
+(require 'iedit)
+;; (global-set-key (kbd "M-s e") 'iedit-mode)
 
 (provide 'init-packages)

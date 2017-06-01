@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(company-minimum-prefix-length 1)
  '(company-tooltip-idle-delay 0.1)
+ '(org-pomodoro-long-break-length 40)
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 75))
 (custom-set-faces

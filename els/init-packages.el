@@ -1,7 +1,7 @@
 (when (>= emacs-major-version 24)
     (require 'package)
       (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/") t)
         )
 
 (require 'cl)
@@ -21,6 +21,7 @@
 		     js2-refactor
 		     expand-region
 		     iedit
+		     org-pomodoro
 		     ) "Default packages")
 
 (setq package-selected-packages s/packages)
@@ -128,5 +129,8 @@
 ;; 设置 iedit-mode 快捷键,默认快捷键是C-;
 (require 'iedit)
 ;; (global-set-key (kbd "M-s e") 'iedit-mode)
+
+;; 引入 org-pomodoro
+(require 'org-pomodoro)
 
 (provide 'init-packages)

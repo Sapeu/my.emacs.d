@@ -1,0 +1,8 @@
+* 工作安排
+
+** TODO [#B] 学习 Emacs 第二季第六天的教程
+   SCHEDULED: <2017-06-01 四 23:00>
+   CLOCK: [2017-06-02 五 00:32]
+
+** TODO [#B] 设置 Emacs org-mode 的配置
+

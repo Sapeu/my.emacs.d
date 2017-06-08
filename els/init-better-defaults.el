@@ -113,6 +113,4 @@
 	regexp-history)
   (call-interactively 'occur))
 
-(global-set-key (kbd "M-s o") 'occur-dwin)
-
 (provide 'init-better-defaults)

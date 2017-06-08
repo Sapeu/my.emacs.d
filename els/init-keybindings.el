@@ -29,4 +29,32 @@
 ;; 定义选中内容格式化或者整个内容格式化快捷键
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 
+;; 设定 counsel-imenu 的快捷键
+(global-set-key (kbd "M-s i") 'counsel-imenu)
+
+;; 自动选取范围中的字符
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+;; 设定 js2-refactor 的快捷键
+(js2r-add-keybindings-with-prefix "C-c C-m")
+
+;; 设定 my-toggle-web-indent 的快捷键
+(global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
+
+;; 设定 occue-dwin 的快捷键
+(global-set-key (kbd "M-s o") 'occur-dwin)
+
+;; 定义 company 的快捷键
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+
+;; 设置 iedit 的快捷键
+(global-set-key (kbd "M-s e") 'iedit-mode)
+
+;; 设置 helm-ag 的快捷键
+(global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
+
 (provide 'init-keybindings)

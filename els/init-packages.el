@@ -22,6 +22,7 @@
 		     expand-region
 		     iedit
 		     org-pomodoro
+		     helm-ag
 		     ) "Default packages")
 
 (setq package-selected-packages s/packages)
@@ -96,11 +97,8 @@
   
   (setq indent-tabs-mode nil))
 
-(global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
-
 ;; 初始化js2-refactor
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
-(js2r-add-keybindings-with-prefix "C-c C-m")
 
 ;; 配置 imenu 快捷键
 (defun js2-imenu-make-index ()
@@ -121,14 +119,6 @@
 (add-hook 'js2-mode-hook
 	  (lambda ()
 	    (setq imenu-create-index-function 'js2-imenu-make-index)))
-(global-set-key (kbd "M-s i") 'counsel-imenu)
-
-;; 自动选取范围中的字符
-(global-set-key (kbd "C-=") 'er/expand-region)
-
-;; 设置 iedit-mode 快捷键,默认快捷键是C-;
-(require 'iedit)
-;; (global-set-key (kbd "M-s e") 'iedit-mode)
 
 ;; 引入 org-pomodoro
 (require 'org-pomodoro)

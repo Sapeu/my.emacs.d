@@ -4,5 +4,5 @@
    SCHEDULED: <2017-06-01 四 23:00>
    CLOCK: [2017-06-02 五 00:32]
 
-** TODO [#B] 设置 Emacs org-mode 的配置
+** TODO [#B] 设置 Emacs org-mode 的配置 
 

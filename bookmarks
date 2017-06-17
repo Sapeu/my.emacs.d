@@ -4,7 +4,7 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/.emacs.d/gtd.org")
- (front-context-string . "** TODO [#B] 设置 ")
- (rear-context-string . "macs 第二季第六天的教程\n\n")
- (position . 57))
+ (front-context-string)
+ (rear-context-string . "s org-mode 的配置\n\n")
+ (position . 144))
 )

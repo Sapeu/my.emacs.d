@@ -23,6 +23,8 @@
 		     iedit
 		     org-pomodoro
 		     helm-ag
+		     flycheck
+		     auto-yasnippet
 		     ) "Default packages")
 
 (setq package-selected-packages s/packages)
@@ -71,6 +73,7 @@
 ;; 在 emacs-lisp-mode 下按单引号不补全引号
 (smartparens-global-mode t)
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+(sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)
 
 ;; 配置 web-mode
 (defun my-web-mode-indent-setup ()
@@ -122,5 +125,9 @@
 
 ;; 引入 org-pomodoro
 (require 'org-pomodoro)
+
+;; 初始化yasnippet
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
 
 (provide 'init-packages)

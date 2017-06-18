@@ -24,7 +24,7 @@
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
 
 ;; 定义counsel-git的快捷键
-(global-set-key (kbd "C-c p f") 'counsel-git)
+;; (global-set-key (kbd "C-c p f") 'counsel-git)
 
 ;; 定义选中内容格式化或者整个内容格式化快捷键
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
@@ -55,6 +55,27 @@
 (global-set-key (kbd "M-s e") 'iedit-mode)
 
 ;; 设置 helm-ag 的快捷键
-(global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
+;; (global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
+
+;; 设置 C-w 向后删除一个单词
+(global-set-key (kbd "C-w") 'backward-kill-word)
+
+;; 设置 evil-leader 的快捷键
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key
+  "ff" 'find-file
+  "rf" 'recentf-open-files
+  "bb" 'switch-to-buffer
+  "kb" 'kill-buffer
+  "pf" 'counsel-git
+  "ps" 'helm-do-ag-project-root
+  "0" 'select-window-0
+  "1" 'select-window-1
+  "2" 'select-window-2
+  "3" 'select-window-3
+  "w/" 'split-window-right
+  "w-" 'split-window-below
+  ":" 'counsel-M-x
+  "wm" 'delete-other-windows)
 
 (provide 'init-keybindings)

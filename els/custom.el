@@ -5,7 +5,11 @@
  ;; If there is more than one, they won't work right.
  '(company-minimum-prefix-length 1)
  '(company-tooltip-idle-delay 0.1)
+ '(evil-want-C-u-scroll t)
  '(org-pomodoro-long-break-length 40)
+ '(package-selected-packages
+   (quote
+    (powerline-evil evil-nerd-commenter evil-surround powerline company monokai-theme hungry-delete swiper counsel smartparens js2-mode nodejs-repl exec-path-from-shell popwin web-mode js2-refactor expand-region iedit org-pomodoro helm-ag flycheck auto-yasnippet evil evil-leader window-numbering)))
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 75))
 (custom-set-faces

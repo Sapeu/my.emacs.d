@@ -1,50 +1,51 @@
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (add-to-list 'package-archives
-	       '("melpa" . "http://elpa.emacs-china.org/melpa/") t)
-  )
-
-(require 'cl)
-
-(defvar s/packages '(
-		     company
-		     monokai-theme
-		     hungry-delete
-		     swiper
-		     counsel
-		     smartparens
-		     js2-mode
-		     nodejs-repl
-		     exec-path-from-shell
-		     popwin
-		     web-mode
-		     js2-refactor
-		     expand-region
-		     iedit
-		     org-pomodoro
-		     helm-ag
-		     flycheck
-		     auto-yasnippet
-		     evil
-		     evil-leader
-		     window-numbering
-		     evil-surround
-		     evil-nerd-commenter
-		     which-key
-		     ) "Default packages")
-
-(setq package-selected-packages s/packages)
-(defun s/packages-installed-p ()
-  (loop for pkg in s/packages
-	when (not (package-installed-p pkg)) do (return nil)
-	finally (return t)))
-
-(unless (s/packages-installed-p)
-  (message "%s" "Refreshing package database ...")
-  (package-refresh-contents)
-  (dolist (pkg s/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
+;; (when (>= emacs-major-version 24)
+;;   (require 'package)
+;;   (add-to-list 'package-archives
+;; 	       '("melpa" . "http://elpa.emacs-china.org/melpa/") t)
+;;   )
+;; 
+;; (require 'cl)
+;; 
+;; (defvar s/packages '(
+;; 		     company
+;; 		     monokai-theme
+;; 		     hungry-delete
+;; 		     swiper
+;; 		     counsel
+;; 		     smartparens
+;; 		     js2-mode
+;; 		     nodejs-repl
+;; 		     exec-path-from-shell
+;; 		     popwin
+;; 		     web-mode
+;; 		     js2-refactor
+;; 		     expand-region
+;; 		     iedit
+;; 		     org-pomodoro
+;; 		     helm-ag
+;; 		     flycheck
+;; 		     auto-yasnippet
+;; 		     evil
+;; 		     evil-leader
+;; 		     window-numbering
+;; 		     evil-surround
+;; 		     evil-nerd-commenter
+;; 		     which-key
+;; 		     mwe-log-commands
+;; 		     ) "Default packages")
+;; 
+;; (setq package-selected-packages s/packages)
+;; (defun s/packages-installed-p ()
+;;   (loop for pkg in s/packages
+;; 	when (not (package-installed-p pkg)) do (return nil)
+;; 	finally (return t)))
+;; 
+;; (unless (s/packages-installed-p)
+;;   (message "%s" "Refreshing package database ...")
+;;   (package-refresh-contents)
+;;   (dolist (pkg s/packages)
+;;     (when (not (package-installed-p pkg))
+;;       (package-install pkg))))
 
 ;; 使用hungry-delete
 (global-hungry-delete-mode)

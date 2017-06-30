@@ -9,7 +9,7 @@
  '(org-pomodoro-long-break-length 40)
  '(package-selected-packages
    (quote
-    (helm-core multiple-cursors pkg-info popup s shut-up undo-tree which-key yasnippet pallet mwe-log-commands 2048-game powerline-evil evil-nerd-commenter evil-surround powerline company monokai-theme hungry-delete swiper counsel smartparens js2-mode nodejs-repl exec-path-from-shell popwin web-mode js2-refactor expand-region iedit org-pomodoro helm-ag flycheck auto-yasnippet evil evil-leader window-numbering)))
+    (use-package helm-core multiple-cursors pkg-info popup s shut-up undo-tree which-key yasnippet pallet mwe-log-commands 2048-game powerline-evil evil-nerd-commenter evil-surround powerline company monokai-theme hungry-delete swiper counsel smartparens js2-mode nodejs-repl exec-path-from-shell popwin web-mode js2-refactor expand-region iedit org-pomodoro helm-ag flycheck auto-yasnippet evil evil-leader window-numbering)))
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 75))
 (custom-set-faces

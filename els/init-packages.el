@@ -176,4 +176,13 @@
 ;; 使用 which-key
 (which-key-mode)
 
+;; 使用 markdown-mode
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "pandoc"))
+
 (provide 'init-packages)

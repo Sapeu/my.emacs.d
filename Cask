@@ -29,6 +29,7 @@
 (depends-on "js2-mode")
 (depends-on "js2-refactor")
 (depends-on "log4e")
+(depends-on "markdown-mode")
 (depends-on "monokai-theme")
 (depends-on "multiple-cursors")
 (depends-on "mwe-log-commands")

@@ -141,8 +141,8 @@
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
 
 ;; 设置org-mode
-(setq org-agenda-files '("~/org")
-      (global-set-key (kbd "C-c a") 'org-agenda))
+;; (setq org-agenda-files '("~/org")
+      ;; (global-set-key (kbd "C-c a") 'org-agenda))
 
 
 

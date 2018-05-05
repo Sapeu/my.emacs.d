@@ -1,11 +1,8 @@
 (when (>= emacs-major-version 24)
-  (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://elpa.emacs-china.org/melpa/") t)
   )
 
 (require 'cl)
-
-
 
 (defvar paul/packages '(
 			company
@@ -45,7 +42,7 @@
 (load-theme 'cherry-blossom t)
 
 ;; 设置一次性删除多个空格
-(require 'hungry-delete)
+;; (require 'hungry-delete)
 (global-hungry-delete-mode)
 
 
@@ -53,12 +50,14 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 
-
 ;; 设置smartparens，括号匹配
 ;; (require 'smartparens-config)
 ;; (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
 
+;; 配置exec-path-from-shell
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 ;; 设置js2-mode
 (setq auto-mode-alist
       (append
@@ -66,7 +65,7 @@
        auto-mode-alist))
 
 ;; 使用nodejs-repl
-(require 'nodejs-repl)
+;; (require 'nodejs-repl)
 
 ;; 配置popwin
 (require 'popwin)

@@ -30,5 +30,6 @@
 ;; 可以替换选中的文字
 (delete-selection-mode t)
 
+(setq enable-recursive-minibuffers t)
 
 (provide 'init-better-defaults)

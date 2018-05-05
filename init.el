@@ -13,17 +13,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'init-packages)
 (require 'init-ui)
-
-(setq ring-bell-function 'ignore)
-
-;; 自动加载
-(global-auto-revert-mode t)
-
-(abbrev-mode t)
-(define-abbrev-table 'global-abbrev-table '(
-					    ("6p" "paul")
-					    ("6m" "Mac OS")
-					    ))
+(require 'init-better-defaults)
 
 ;; (electric-indent-mode -1)
 
@@ -39,14 +29,9 @@
 
 ;; 最近文件设置
 (require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-items 25)
+
 ;; 设置快捷键打开最近文件
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
-
-;; 关闭自动备份文件
-(setq make-backup-files nil)
-(setq auto-save-default nil)
 
 (require 'org)
 ;; 设置org-mode中src代码高亮
@@ -54,11 +39,6 @@
 
 ;; 可以替换选中的文字
 (delete-selection-mode t)
-
-;; 括号匹配
-(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
-
-(global-hl-line-mode t)
 
 
 ;; 设置smex

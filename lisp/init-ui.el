@@ -10,10 +10,9 @@
 ;; 设置鼠标样式
 (setq default-cursor-type 'bar)
 
-;; 显示行号
-(global-linum-mode t)
-
 ;; 设置为最大化
 ;; (setq initial-frame-alist (quote ((fullscreen . maximized))))
+
+(global-hl-line-mode t)
 
 (provide 'init-ui)

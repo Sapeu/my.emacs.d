@@ -27,4 +27,8 @@
 ;; 括号匹配
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
+;; 可以替换选中的文字
+(delete-selection-mode t)
+
+
 (provide 'init-better-defaults)

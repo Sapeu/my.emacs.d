@@ -39,6 +39,9 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
+;; 自动加载
+(global-auto-revert-mode t)
+
 ;; 关闭工具栏
 (tool-bar-mode -1)
 ;; 关闭滚动条
@@ -74,6 +77,7 @@
 
 ;; 关闭自动备份文件
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 
 (require 'org)
 ;; 设置org-mode中src代码高亮

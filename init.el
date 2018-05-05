@@ -14,6 +14,7 @@
 (require 'init-packages)
 (require 'init-ui)
 (require 'init-better-defaults)
+(require 'init-org)
 
 ;; (electric-indent-mode -1)
 
@@ -32,10 +33,6 @@
 
 ;; 设置快捷键打开最近文件
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
-
-(require 'org)
-;; 设置org-mode中src代码高亮
-(setq org-src-fontify-natively t)
 
 ;; 可以替换选中的文字
 (delete-selection-mode t)
@@ -69,9 +66,6 @@
 ;; 设置按照按键查找方法
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
 
-;; 设置org-mode
-(setq org-agenda-files '("~/org"))
-(global-set-key (kbd "C-c a") 'org-agenda)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

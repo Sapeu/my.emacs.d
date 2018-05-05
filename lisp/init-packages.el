@@ -1,6 +1,5 @@
 (when (>= emacs-major-version 24)
   (require 'package)
-  (package-initialize)
   (add-to-list 'package-archives '("melpa" . "https://elpa.emacs-china.org/melpa/") t)
   )
 
@@ -25,8 +24,6 @@
 
 ;; 设置选中的packages
 (setq package-selected-packages paul/packages)
-
-
 
 (defun paul/packages-installed-p ()
   (loop for pkg in paul/packages
@@ -58,7 +55,7 @@
 
 
 ;; 设置smartparens，括号匹配
-(require 'smartparens-config)
+;; (require 'smartparens-config)
 ;; (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
 

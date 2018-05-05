@@ -12,6 +12,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'init-packages)
+(require 'init-ui)
 
 (setq ring-bell-function 'ignore)
 
@@ -24,16 +25,9 @@
 					    ("6m" "Mac OS")
 					    ))
 
-;; 关闭工具栏
-(tool-bar-mode -1)
-;; 关闭滚动条
-(scroll-bar-mode -1)
 ;; (electric-indent-mode -1)
-(setq inhibit-splash-screen t)
 
 ;; (linum-mode t)
-;; 显示行号
-(global-linum-mode t)
 
 ;; 定义打开emacs配置文件方法
 (defun open-my-init-file()
@@ -50,10 +44,6 @@
 ;; 设置快捷键打开最近文件
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
-;; (setq cursor-type 'bar)
-;; 设置鼠标样式
-(setq default-cursor-type 'bar)
-
 ;; 关闭自动备份文件
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -64,9 +54,6 @@
 
 ;; 可以替换选中的文字
 (delete-selection-mode t)
-
-;; 设置为最大化
-;; (setq initial-frame-alist (quote ((fullscreen . maximized))))
 
 ;; 括号匹配
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)

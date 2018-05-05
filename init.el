@@ -22,6 +22,7 @@
 			js2-mode
 			nodejs-repl
 			exec-path-from-shell
+			popwin
 			) "Default packages")
 
 ;; 设置选中的packages
@@ -148,6 +149,9 @@
 ;; (setq org-agenda-files '("~/org")
       ;; (global-set-key (kbd "C-c a") 'org-agenda))
 
+;; 配置popwin
+(require 'popwin)
+(popwin-mode t)
 
 
 (custom-set-variables

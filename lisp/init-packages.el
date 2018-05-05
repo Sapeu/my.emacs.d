@@ -71,5 +71,7 @@
 (require 'popwin)
 (popwin-mode t)
 
+(require 'org)
+
 (provide 'init-packages)
 

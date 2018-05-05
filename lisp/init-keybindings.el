@@ -27,5 +27,7 @@
 ;; (smex-initialize)
 ;; (global-set-key (kbd "M-x") 'smex)
 
+(global-set-key (kbd "C-c p f") 'counsel-git)
+
 (provide 'init-keybindings)
 

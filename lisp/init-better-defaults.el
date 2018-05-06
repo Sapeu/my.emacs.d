@@ -65,8 +65,9 @@
 (setq dired-recursive-deletes 'always)
 (setq dired-recursive-copies 'always)
 
-(require 'dired)
 (put 'dired-find-alternate-file 'disabled nil)
-(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
+
+(require 'dired-x)
+(setq dired-dwim-target t)
 
 (provide 'init-better-defaults)

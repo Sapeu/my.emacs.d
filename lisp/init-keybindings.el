@@ -32,5 +32,7 @@
 
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 
+(global-set-key (kbd "s-/") 'hippie-expand)
+
 (provide 'init-keybindings)
 

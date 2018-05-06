@@ -47,4 +47,26 @@
 	(indent-buffer)
 	(message "Indent Buffer.")))))
 
+(setq hippie-expand-try-functions-list '(try-expand-dabbrev
+					 try-expand-dabbrev-all-buffers
+					 try-expand-dabbrev-from-kill
+					 try-complete-file-name-partially
+					 try-complete-file-name
+					 try-expand-all-abbrevs
+					 try-expand-list
+					 try-expand-line
+					 try-complete-lisp-symbol-partially
+					 try-complete-lisp-symbol))
+
+;; 替换yes或者no为y或者n
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; 设置一直是递归删除和递归拷贝
+(setq dired-recursive-deletes 'always)
+(setq dired-recursive-copies 'always)
+
+(require 'dired)
+(put 'dired-find-alternate-file 'disabled nil)
+(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
+
 (provide 'init-better-defaults)

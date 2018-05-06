@@ -16,6 +16,7 @@
 			nodejs-repl
 			exec-path-from-shell
 			popwin
+			highlight-parentheses
 			) "Default packages")
 
 
@@ -72,6 +73,8 @@
 (popwin-mode t)
 
 (require 'org)
+
+(require 'highlight-parentheses)
 
 (provide 'init-packages)
 

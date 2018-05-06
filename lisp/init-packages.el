@@ -75,6 +75,7 @@
 (require 'org)
 
 (require 'highlight-parentheses)
+(global-highlight-parentheses-mode t)
 
 (provide 'init-packages)
 

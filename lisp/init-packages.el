@@ -17,6 +17,7 @@
 			exec-path-from-shell
 			popwin
 			highlight-parentheses
+			reveal-in-osx-finder
 			) "Default packages")
 
 

@@ -56,6 +56,8 @@
 ;; (require 'smartparens-config)
 ;; (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
+;; 编写lisp时，单引号不匹配
+(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
 
 ;; 配置exec-path-from-shell
 (when (memq window-system '(mac ns))

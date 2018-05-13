@@ -23,6 +23,12 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 
+;; 定义show-paren-mode匹配括号 
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+  (cond ((looking-at-p "\\s(") (funcall fn))
+	(t (save-excursion
+	     (ignore-errors (backward-up-list))
+	     (funcall fn)))))
 
 ;; 括号匹配
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
@@ -69,5 +75,18 @@
 
 (require 'dired-x)
 (setq dired-dwim-target t)
+
+;; 隐藏DOS^M符号
+(defun hidden-dos-eol ()
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+;; 删除dos换行符号
+(defun remove-dos-eol ()
+  (interactive)
+  (goto-char (point-min))
+  (while (search-forward "\r" nil t) (replace-match "")))
+
 
 (provide 'init-better-defaults)

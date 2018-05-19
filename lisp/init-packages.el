@@ -23,6 +23,8 @@
 			expand-region
 			iedit
 			org-pomodoro
+			helm-ag
+			flycheck
 			) "Default packages")
 
 
@@ -114,6 +116,13 @@
 
 ;; 配置js2-refactor
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
+
+;; 使用flycheck
+(add-hook 'js2-mode-hook 'flycheck-mode)
+
+;; 激活代码块补全的插件
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
 
 (provide 'init-packages)
 

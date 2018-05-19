@@ -58,5 +58,15 @@
 ;; 配置imenu快捷键
 (global-set-key (kbd "M-s i") 'counsel-imenu)
 
+;; 修改company的快捷键
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+
+;; ag的快捷键
+(global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
+
 (provide 'init-keybindings)
 

@@ -37,5 +37,7 @@
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
+(global-set-key (kbd "<s-return>") 'toggle-frame-fullscreen)
+
 (provide 'init-keybindings)
 

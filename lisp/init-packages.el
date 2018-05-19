@@ -25,6 +25,8 @@
 			org-pomodoro
 			helm-ag
 			flycheck
+			yasnippet
+			auto-yasnippet
 			) "Default packages")
 
 
@@ -65,6 +67,7 @@
 (smartparens-global-mode t)
 ;; 编写lisp时，单引号不匹配
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+(sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)
 
 ;; 配置exec-path-from-shell
 (when (memq window-system '(mac ns))
@@ -121,6 +124,7 @@
 (add-hook 'js2-mode-hook 'flycheck-mode)
 
 ;; 激活代码块补全的插件
+(require 'yasnippet)
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 

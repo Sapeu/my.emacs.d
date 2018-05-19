@@ -68,5 +68,9 @@
 ;; ag的快捷键
 (global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
 
+;; auto-yasnippet
+;; (global-set-key (kbd "H-w") #'aya-create)
+;; (global-set-key (kbd "H-y") #'aya-expand)
+
 (provide 'init-keybindings)
 

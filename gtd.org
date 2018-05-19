@@ -1,0 +1,12 @@
+* 学习安排
+
+** TODO [#B] 学习emacs的配置
+   SCHEDULED: <2018-05-19 Sat 23:29>
+   CLOCK: [2018-05-20 Sun 00:18]
+   
+
+** TODO [#B] 明天学习emacs的配置
+   SCHEDULED: <2018-05-20 Sun 21:00>
+  http://book.emacs-china.org/#orgheadline38
+   
+  [2018-05-20 Sun 00:05]

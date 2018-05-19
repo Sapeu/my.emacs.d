@@ -22,6 +22,7 @@
 			js2-refactor
 			expand-region
 			iedit
+			org-pomodoro
 			) "Default packages")
 
 

@@ -37,7 +37,26 @@
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
+;; 全屏快捷键
 (global-set-key (kbd "<s-return>") 'toggle-frame-fullscreen)
+
+;; org-capture的快捷键
+(global-set-key (kbd "C-c r") 'org-capture)
+
+;; 两个空格和四个空格之间进行切换的快捷键
+(global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
+
+;; 配置expand-region
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+;; 配置iedit
+(global-set-key (kbd "M-s e") 'iedit-mode)
+
+;; js2-mode的前缀快捷键
+(js2r-add-keybindings-with-prefix "C-c C-m")
+
+;; 配置imenu快捷键
+(global-set-key (kbd "M-s i") 'counsel-imenu)
 
 (provide 'init-keybindings)
 

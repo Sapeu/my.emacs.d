@@ -125,9 +125,6 @@
 	      (lambda ()
 		(setq imenu-create-index-function 'js2-imenu-make-index)))
 
-;; 配置imenu快捷键
-(global-set-key (kbd "M-s i") 'counsel-imenu)
-
 ;; 设置默认编码
 (set-language-environment "UTF-8")
 

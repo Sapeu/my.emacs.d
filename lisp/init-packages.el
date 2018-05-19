@@ -112,17 +112,8 @@
 
   (setq indent-tabs-mode nil))
 
-(global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
-
 ;; 配置js2-refactor
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
-(js2r-add-keybindings-with-prefix "C-c C-m")
-
-;; 配置expand-region
-(global-set-key (kbd "C-=") 'er/expand-region)
-
-;; 配置iedit
-(global-set-key (kbd "M-s e") 'iedit-mode)
 
 (provide 'init-packages)
 

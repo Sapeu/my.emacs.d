@@ -33,6 +33,8 @@
 			evil-leader
 			window-numbering
 			evil-surround
+			powerline
+			evil-nerd-commenter
 			) "Default packages")
 
 
@@ -147,6 +149,12 @@
 ;; 激活evil-surround
 (require 'evil-surround)
 (global-evil-surround-mode)
+
+;; 激活Evil-nerd-commenter
+(evilnc-default-hotkeys)
+
+;; 激活powerline
+(powerline-default-theme)
 
 (provide 'init-packages)
 

@@ -9,6 +9,8 @@
  '(custom-safe-themes
    (quote
     ("cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
+ '(evil-leader/leader "SPC")
+ '(evil-want-C-u-scroll t)
  '(org-pomodoro-long-break-length 40)
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 90))

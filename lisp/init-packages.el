@@ -1,6 +1,8 @@
-(when (>= emacs-major-version 24)
-  (add-to-list 'package-archives '("melpa" . "https://elpa.emacs-china.org/melpa/") t)
-  )
+;; (when (>= emacs-major-version 24)
+;;  (add-to-list 'package-archives '("melpa" . "https://elpa.emacs-china.org/melpa/") t)
+;;  )
+(setq package-archives '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
+                         ("melpa" . "https://elpa.emacs-china.org/melpa/")))
 
 (require 'cl)
 
@@ -27,6 +29,10 @@
 			flycheck
 			yasnippet
 			auto-yasnippet
+			evil
+			evil-leader
+			window-numbering
+			evil-surround
 			) "Default packages")
 
 
@@ -127,6 +133,20 @@
 (require 'yasnippet)
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
+
+;; 激活evil
+(evil-mode 1)
+(setcdr evil-insert-state-map nil)
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
+
+(global-evil-leader-mode)
+
+;; 激活window-numberin
+(window-numbering-mode 1)
+
+;; 激活evil-surround
+(require 'evil-surround)
+(global-evil-surround-mode)
 
 (provide 'init-packages)
 

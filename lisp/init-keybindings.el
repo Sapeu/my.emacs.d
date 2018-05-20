@@ -72,5 +72,27 @@
 ;; (global-set-key (kbd "H-w") #'aya-create)
 ;; (global-set-key (kbd "H-y") #'aya-expand)
 
+;; C-w删除一个词
+(global-set-key (kbd "C-w") 'backward-kill-word)
+
+;; 切换evil
+(global-set-key (kbd "C-z") 'evil-toggle-key)
+(evil-leader/set-key
+  "ff" 'find-file
+  "rf" 'recentf-open-files
+  "bb" 'switch-to-buffer
+  "bk" 'kill-buffer
+  "pf" 'counsel-git
+  "ps" 'helm-do-ag-project-root
+  "0"  'select-window-0
+  "1"  'select-window-1
+  "2"  'select-window-2
+  "3"  'select-window-3
+  "w/" 'split-window-right
+  "w-" 'split-window-below
+  ":"  'counsel-M-x
+  "wM" 'delete-other-windows
+  )
+
 (provide 'init-keybindings)
 

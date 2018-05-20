@@ -27,7 +27,7 @@
 ;; (smex-initialize)
 ;; (global-set-key (kbd "M-x") 'smex)
 
-(global-set-key (kbd "C-c p f") 'counsel-git)
+;; (global-set-key (kbd "C-c p f") 'counsel-git)
 
 
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
@@ -66,7 +66,7 @@
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
 ;; ag的快捷键
-(global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
+;; (global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
 
 ;; auto-yasnippet
 ;; (global-set-key (kbd "H-w") #'aya-create)
@@ -77,26 +77,39 @@
 
 ;; 切换evil
 (global-set-key (kbd "C-z") 'evil-toggle-key)
-(evil-leader/set-key
-  "ff" 'find-file
-  "rf" 'recentf-open-files
-  "bb" 'switch-to-buffer
-  "bk" 'kill-buffer
-  "pf" 'counsel-git
-  "ps" 'helm-do-ag-project-root
-  "0"  'select-window-0
-  "1"  'select-window-1
-  "2"  'select-window-2
-  "3"  'select-window-3
-  "w/" 'split-window-right
-  "w-" 'split-window-below
-  ":"  'counsel-M-x
-  "wM" 'delete-other-windows
+(with-eval-after-load 'evil
+  (evil-leader/set-key
+    "ff" 'find-file
+    "rf" 'recentf-open-files
+    "bb" 'switch-to-buffer
+    "bk" 'kill-buffer
+    "pf" 'counsel-git
+    "ps" 'helm-do-ag-project-root
+    "0"  'select-window-0
+    "1"  'select-window-1
+    "2"  'select-window-2
+    "3"  'select-window-3
+    "w/" 'split-window-right
+    "w-" 'split-window-below
+    ":"  'counsel-M-x
+    "wM" 'delete-other-windows
+    "sq" 'save-buffers-kill-terminal
+    )
   )
 
 
 (define-key evil-normal-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
 (define-key evil-visual-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
+
+(add-hook 'occur-mode-hook
+	  (lambda ()
+	    (evil-add-hjkl-bindings occur-mode-map 'emacs
+	      (kbd "/") 'evil-search-forward
+	      (kbd "n") 'evil-search-next
+	      (kbd "N") 'evil-search-previous
+	      (kbd "C-d") 'evil-scroll-down
+	      (kbd "C-u") 'evil-scroll-up
+	    )))
 
 (provide 'init-keybindings)
 

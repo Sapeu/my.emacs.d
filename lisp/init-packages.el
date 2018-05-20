@@ -33,8 +33,8 @@
 			evil-leader
 			window-numbering
 			evil-surround
-			powerline
 			evil-nerd-commenter
+			which-key
 			) "Default packages")
 
 
@@ -154,7 +154,11 @@
 (evilnc-default-hotkeys)
 
 ;; 激活powerline
-(powerline-default-theme)
+;; (powerline-default-theme)
+
+;; 激活wich-key
+(which-key-mode 1)
+
 
 (provide 'init-packages)
 

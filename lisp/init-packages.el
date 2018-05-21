@@ -1,58 +1,58 @@
 ;; (when (>= emacs-major-version 24)
 ;;  (add-to-list 'package-archives '("melpa" . "https://elpa.emacs-china.org/melpa/") t)
 ;;  )
-(setq package-archives '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
-                         ("melpa" . "https://elpa.emacs-china.org/melpa/")))
+;; (setq package-archives '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
+;;                          ("melpa" . "https://elpa.emacs-china.org/melpa/")))
 
-(require 'cl)
+;; (require 'cl)
 
-(defvar paul/packages '(
-			company
-			cherry-blossom-theme
-			hungry-delete
-			;; smex
-			swiper
-			counsel
-			smartparens
-			js2-mode
-			nodejs-repl
-			exec-path-from-shell
-			popwin
-			highlight-parentheses
-			reveal-in-osx-finder
-			web-mode
-			js2-refactor
-			expand-region
-			iedit
-			org-pomodoro
-			helm-ag
-			flycheck
-			yasnippet
-			auto-yasnippet
-			evil
-			evil-leader
-			window-numbering
-			evil-surround
-			evil-nerd-commenter
-			which-key
-			) "Default packages")
-
-
-;; 设置选中的packages
-(setq package-selected-packages paul/packages)
-
-(defun paul/packages-installed-p ()
-  (loop for pkg in paul/packages
-	when (not (package-installed-p pkg)) do (return nil)
-	finally (return t)))
+;; (defvar paul/packages '(
+;; 			company
+;; 			cherry-blossom-theme
+;; 			hungry-delete
+;; 			;; smex
+;; 			swiper
+;; 			counsel
+;; 			smartparens
+;; 			js2-mode
+;; 			nodejs-repl
+;; 			exec-path-from-shell
+;; 			popwin
+;; 			highlight-parentheses
+;; 			reveal-in-osx-finder
+;; 			web-mode
+;; 			js2-refactor
+;; 			expand-region
+;; 			iedit
+;; 			org-pomodoro
+;; 			helm-ag
+;; 			flycheck
+;; 			yasnippet
+;; 			auto-yasnippet
+;; 			evil
+;; 			evil-leader
+;; 			window-numbering
+;; 			evil-surround
+;; 			evil-nerd-commenter
+;; 			which-key
+;; 			) "Default packages")
 
 
-(unless (paul/packages-installed-p)
-  (message "%s" "Refreshing package database ...")
-  (package-refresh-contents)
-  (dolist (pkg paul/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
+;; ;; 设置选中的packages
+;; (setq package-selected-packages paul/packages)
+
+;; (defun paul/packages-installed-p ()
+;;   (loop for pkg in paul/packages
+;; 	when (not (package-installed-p pkg)) do (return nil)
+;; 	finally (return t)))
+
+
+;; (unless (paul/packages-installed-p)
+;;   (message "%s" "Refreshing package database ...")
+;;   (package-refresh-contents)
+;;   (dolist (pkg paul/packages)
+;;     (when (not (package-installed-p pkg))
+;;       (package-install pkg))))
 
 ;; 设置自动补全
 (global-company-mode t)

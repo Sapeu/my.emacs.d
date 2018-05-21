@@ -12,6 +12,9 @@
  '(evil-leader/leader "SPC")
  '(evil-want-C-u-scroll t)
  '(org-pomodoro-long-break-length 40)
+ '(package-selected-packages
+   (quote
+    (s shut-up undo-tree pallet company cherry-blossom-theme hungry-delete swiper counsel smartparens js2-mode nodejs-repl exec-path-from-shell popwin highlight-parentheses reveal-in-osx-finder web-mode js2-refactor expand-region iedit org-pomodoro helm-ag flycheck yasnippet auto-yasnippet evil evil-leader window-numbering evil-surround evil-nerd-commenter which-key)))
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 90))
 

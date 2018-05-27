@@ -54,6 +54,23 @@
 ;;     (when (not (package-installed-p pkg))
 ;;       (package-install pkg))))
 
+
+(use-package exec-path-from-shell
+  :ensure t
+  :if (and (eq system-type 'darwin) (display-graphic-p))
+  :pin melpa-stable
+  :config
+  (progn
+    (when (string-match-p "/zsh$" (getenv "SHELL"))
+      ;; Use a non-interactive login shell.  A login shell, because my
+      ;; environment variables are mostly set in `.zprofile'.
+      (setq exec-path-from-shell-arguments '("-l")))
+
+    (exec-path-from-shell-initialize)
+    )
+  )
+
+
 ;; 设置自动补全
 (global-company-mode t)
 

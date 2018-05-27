@@ -1,5 +1,6 @@
 (source "gnu" "https://elpa.emacs-china.org/gnu/")
 (source "melpa" "https://elpa.emacs-china.org/melpa/")
+(source "melpa-stable" "https://elpa.emacs-china.org/melpa-stable/")
 
 (depends-on "alert")
 (depends-on "async")
@@ -45,6 +46,7 @@
 (depends-on "smartparens")
 (depends-on "swiper")
 (depends-on "undo-tree")
+(depends-on "use-package")
 (depends-on "web-mode")
 (depends-on "which-key")
 (depends-on "window-numbering")

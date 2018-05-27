@@ -176,6 +176,11 @@
 ;; 激活wich-key
 (which-key-mode 1)
 
+;; 有时 Python 的补全 不工作
+(add-hook 'python-mode-hook
+	  (lambda ()
+	    (set (make-local-variable 'company-backends) '((company-anaconda company-dabbrev-code) company-dabbrev))))
+
 
 (provide 'init-packages)
 

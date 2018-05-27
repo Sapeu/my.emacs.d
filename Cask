@@ -8,6 +8,7 @@
 (depends-on "cask")
 (depends-on "cherry-blossom-theme")
 (depends-on "company")
+(depends-on "company-anaconda")
 (depends-on "counsel")
 (depends-on "dash")
 (depends-on "epl")

@@ -148,4 +148,6 @@
 		      "return links as string\n"))))
 	(format "%s" (s-chop-suffix "\"" (s-chop-prefix "\"" result)))))
 
+(pixel-scroll-mode t)
+
 (provide 'init-better-defaults)

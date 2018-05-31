@@ -303,6 +303,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
         '(("melpa-cn" . "https://elpa.emacs-china.org/melpa/")
           ("org-cn" . "https://elpa.emacs-china.org/org/")
           ("gnu-cn" . "https://elpa.emacs-china.org/gnu/")))
+  (pixel-scroll-mode t)
+  (global-set-key (kbd "<s-return>") 'toggle-frame-fullscreen)
+  (setq tramp-ssh-controlmaster-options
+        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
   )
 
 (defun dotspacemacs/user-config ()
@@ -312,8 +316,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (pixel-scroll-mode t)
-  (global-set-key (kbd "<s-return>") 'toggle-frame-fullscreen)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

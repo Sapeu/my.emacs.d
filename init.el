@@ -38,7 +38,8 @@ values."
      ;; ----------------------------------------------------------------
      ivy
      auto-completion
-     better-defaults
+     (better-defaults :variables
+                      better-defaults-move-to-beginning-of-code-first t)
      emacs-lisp
      git
      markdown
@@ -127,8 +128,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai
-                         spacemacs-dark
+   dotspacemacs-themes '(spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -310,6 +310,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (global-set-key (kbd "<s-return>") 'toggle-frame-fullscreen)
   (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+  (setq ns-use-srgb-colorspace nil)
   )
 
 (defun dotspacemacs/user-config ()

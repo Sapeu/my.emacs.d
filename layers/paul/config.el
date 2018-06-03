@@ -2,8 +2,8 @@
 (global-linum-mode t)
 
 ;; 将 occur 的 buffer 中的光标移动方式修改为 HJKL
-(evilified-state-evilify-map occur-mode-map
-  :mode occur-mode)
+;; (evilified-state-evilify-map occur-mode-map
+;;                              :mode occur-mode)
 
 ;; dwin = do what i mean.
 (defun occur-dwim ()

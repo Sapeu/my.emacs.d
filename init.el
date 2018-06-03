@@ -37,6 +37,7 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ivy
+     helm
      auto-completion
      (better-defaults :variables
                       better-defaults-move-to-beginning-of-code-first t)
@@ -50,6 +51,7 @@ values."
      ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
+     paul
      ;; version-control
      )
    ;; List of additional packages that will be installed without being

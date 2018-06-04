@@ -129,8 +129,10 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-light
-                         spacemacs-dark)
+   dotspacemacs-themes '(
+                         spacemacs-dark
+                         spacemacs-light
+                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -323,6 +325,11 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; (setcdr evil-insert-state-map nil)
   ;; (define-key evil-insert-state-map [escape] 'evil-normal-state)
+
+  ;; 将 occur 的 buffer 中的光标移动方式修改为 HJKL
+  (evilified-state-evilify-map occur-mode-map
+                               :mode occur-mode)
+
   )
 
 

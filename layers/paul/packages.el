@@ -30,7 +30,11 @@
 ;;; Code:
 
 (defconst paul-packages
-  '(youdao-dictionary)
+  '(
+    youdao-dictionary
+    company
+    (occur-mode :location built-in)
+    )
   "The list of Lisp packages required by the paul layer.
 
 Each entry is either:
@@ -65,6 +69,16 @@ Each entry is either:
     :init
     (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
     )
+  )
+
+(defun paul/post-init-company()
+  (setq company-minimum-prefix-length 1))
+
+
+(defun paul/init-occur-mode()
+  ;; 将 occur 的 buffer 中的光标移动方式修改为 HJKL
+  (evilified-state-evilify-map occur-mode-map
+    :mode occur-mode)
   )
 
 

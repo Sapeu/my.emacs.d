@@ -36,7 +36,8 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     helm
+     ivy
+     ;; helm
      auto-completion
      (better-defaults :variables
                       better-defaults-move-to-beginning-of-code-first t)
@@ -325,10 +326,6 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; (setcdr evil-insert-state-map nil)
   ;; (define-key evil-insert-state-map [escape] 'evil-normal-state)
-
-  ;; 将 occur 的 buffer 中的光标移动方式修改为 HJKL
-  (evilified-state-evilify-map occur-mode-map
-                               :mode occur-mode)
 
   )
 

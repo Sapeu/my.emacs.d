@@ -51,6 +51,7 @@ values."
      ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
+     (chinese :variables chinese-enable-youdao-dict t)
      paul
      ;; version-control
      )

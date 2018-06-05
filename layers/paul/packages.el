@@ -34,6 +34,7 @@
     youdao-dictionary
     company
     ;; (occur-mode :location built-in)
+    (gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
     )
   "The list of Lisp packages required by the paul layer.
 
@@ -81,5 +82,10 @@ Each entry is either:
 ;;     :mode occur-mode)
 ;;   )
 
+
+(defun paul/init-gulpjs ()
+  (use-package gulpjs
+    :init)
+  )
 
 ;;; packages.el ends here

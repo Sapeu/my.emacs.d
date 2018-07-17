@@ -1,5 +1,5 @@
 ;; 开启行号显示
-(global-linum-mode t)
+;; (global-linum-mode t)
 
 ;; dwin = do what i mean.
 (defun occur-dwim ()

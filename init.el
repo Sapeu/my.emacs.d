@@ -40,7 +40,8 @@ values."
      helm
      auto-completion
      (better-defaults :variables
-                      better-defaults-move-to-beginning-of-code-first t)
+                      better-defaults-move-to-beginning-of-code-first t
+                      better-defaults-move-to-end-of-code-first t)
      emacs-lisp
      git
      markdown
@@ -52,12 +53,15 @@ values."
      spell-checking
      syntax-checking
      ;; (chinese :variables chinese-enable-youdao-dict t)
-     paul
+     (colors :variables
+             colors-enable-nyan-cat-progress-bar t)
+     ;; paul
      ;; version-control
      (ruby :variables
            ruby-enable-enh-ruby-mode t
            ruby-version-manager 'rvm)
      ruby-on-rails
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -144,7 +148,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -319,7 +323,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (global-set-key (kbd "<s-return>") 'toggle-frame-fullscreen)
   (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
-  (setq ns-use-srgb-colorspace nil)
+  ;; (setq ns-use-srgb-colorspace nil)
+  ;; (setq neo-theme 'icons)
   )
 
 (defun dotspacemacs/user-config ()

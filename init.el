@@ -67,7 +67,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(youdao-dictionary)
+   dotspacemacs-additional-packages '(youdao-dictionary all-the-icons)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -324,7 +324,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
   ;; (setq ns-use-srgb-colorspace nil)
-  ;; (setq neo-theme 'icons)
   )
 
 (defun dotspacemacs/user-config ()
@@ -336,6 +335,9 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; (setcdr evil-insert-state-map nil)
   ;; (define-key evil-insert-state-map [escape] 'evil-normal-state)
+  (setq powerline-default-separator 'slant)
+  (setq powerline-image-apple-rgb t)
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
   )
 
 
